@@ -4,7 +4,7 @@
 
 [redhartservers:vars]
 ansible_user = ec2-user
-ansible_private_key_file = /home/ubuntu/.ssh/henriksinkay.pem
+ansible_private_key_file = /home/ubuntu/.ssh/xxxxxxx
 
 [ubuntuservers]
 54.90.28.186
@@ -12,4 +12,4 @@ ansible_private_key_file = /home/ubuntu/.ssh/henriksinkay.pem
 
 [ubuntuservers:vars]
 ansible_user = ubuntu
-ansible_private_key_file = /home/ubuntu/.ssh/henriksinkay.pem
+ansible_private_key_file = /home/ubuntu/.ssh/xxxxxxxx
