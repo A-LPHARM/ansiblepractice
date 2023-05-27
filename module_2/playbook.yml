@@ -1,0 +1,40 @@
+---
+- name: install Apache on Redhat
+  gather_facts: false
+  hosts: redhartservers
+  become: true
+  
+  tasks:
+    - name: install httpd
+      ansible.builtin.yum:
+        name: httpd
+        state: present
+
+- name: Install Apache on Ubuntu
+  gather_facts: false
+  hosts: ubuntuservers
+  become: true
+
+  tasks:
+    - name: install apache2
+      ansible.builtin.apt:
+        name: apache2
+        state: present
+
+# - name: Retrieving Ansible Facts
+#   gather_facts: true
+#   hosts: all
+#   become: true
+#   tasks:
+    # - name: Get facts for one Amazon host
+    #   debug:
+    #     var: ansible_facts
+      
+
+    # - name: Get hosts distros
+    #   debug:
+    #       var: ansible_facts['distribution']
+    
+    # - name: Get OS family
+    #   debug:
+    #     var: ansible_os_family

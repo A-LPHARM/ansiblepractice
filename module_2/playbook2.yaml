@@ -1,0 +1,23 @@
+---
+- name: install Apache on Redhat
+  gather_facts: true
+  hosts: all
+  # vars_files:
+    # - "apache_default.yml"
+    # - "apache_Redhat.yml"
+  become: true
+
+  tasks:
+    - name: install apache on Amazon linux
+      package:
+        name: httpd
+        state: latest
+        update_cache: yes
+      when: ansible_os_family=='Redhat'
+
+    - name: install apache on ubuntu
+      apt:
+        name: apache2
+        state: latest
+        update_cache: yes
+      when: ansible_facts=='Ubuntu'
