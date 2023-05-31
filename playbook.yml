@@ -1,0 +1,8 @@
+---
+- name: Ansible Dynamic Inventory
+  gather_facts: true
+  user: ubuntu
+  hosts: tag_Name_amazonserver
+  tasks:
+    - name: Run shell command
+      command: "ping www.google.com -c 10"

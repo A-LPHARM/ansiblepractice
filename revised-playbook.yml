@@ -1,0 +1,13 @@
+---
+- name: Ansible Dynamic Inventory
+  gather_facts: true
+  user: "{{ user }}"
+  become: true
+  hosts: aws_ec2
+  tasks:
+    - name: Run shell command
+      command: "ping www.google.com -c 10"
+    - name: install Apache
+      package: 
+        name: "{{ apache }}"
+        state: present

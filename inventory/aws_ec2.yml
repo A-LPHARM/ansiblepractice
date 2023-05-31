@@ -1,0 +1,12 @@
+plugin: amazon.aws.aws_ec2
+aws_profile: default
+regions:
+  - us-east-1
+filters:
+  instance-state-name: running
+  tag:Name:
+    - ubuntuservers
+    - amazonservers
+keyed_groups:
+  - prefix: tag
+    key: tags
